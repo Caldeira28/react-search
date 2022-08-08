@@ -1,5 +1,6 @@
-import BasicCard from "./components/BasicCard";
 import { useEffect, useState } from "react";
+import BasicCard from "./components/BasicCard";
+import { Rings } from  'react-loader-spinner'
 import "./index.css";
 
 export default function App() {
@@ -55,6 +56,13 @@ export default function App() {
     } else if (error) {
         return <div>There is a problem fetching the post data - {error}</div>;
     } else {
-        return "Loading...";
+        return (<Rings
+          height = "80"
+          width = "80"
+          radius = "9"
+          color = 'green'
+          ariaLabel = 'three-dots-loading'     
+          
+        />);
     }
 }
